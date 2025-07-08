@@ -2,7 +2,9 @@ package application.com.handlers;
 
 import application.com.handlers.common.ErrorHandler;
 import application.com.handlers.common.FileHandler;
-import application.com.handlers.common.RedirectHandler;
+import application.com.handlers.templates.impl.CatHandler;
+import application.com.processings.CatActionProcessing;
+import application.com.processings.CatNameProcessing;
 import application.com.utils.URIResolver;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -21,19 +23,12 @@ public class RouterHandler implements HttpHandler
 
     public RouterHandler()
     {
-        routes.put("GET /", it -> RedirectHandler.handle(it,  "/books"));
+        routes.put("GET /", it -> new CatHandler().handle(it, "templates/welcome.ftl"));
 
-        routes.put("GET /books", it -> new BooksHandler().handle(it, BOOKS_TEMPLATE));
-        routes.put("^GET /books/(\\d+)$", it -> new BookHandler().handle(it, BOOK_TEMPLATE));
+        routes.put("POST /cat", it -> new CatNameProcessing().process(it));
+        routes.put("GET /cat", it -> new CatHandler().handle(it, "templates/cat.ftl"));
 
-        routes.put("GET /clients", it -> new ClientsHandler().handle(it, CLIENTS_TEMPLATE));
-        routes.put("^GET /clients/(\\d+)$", it -> new ClientHandler().handle(it, CLIENT_TEMPLATE));
-
-        routes.put("GET /login", it -> new LoginOrRegistrationHandler().handle(it, LOGIN_TEMPLATE));
-        routes.put("POST /login", it -> new LoginProcessing().process(it));
-        routes.put("GET /registration", it -> new LoginOrRegistrationHandler().handle(it, REGISTRATION_TEMPLATE));
-        routes.put("POST /registration", it -> new RegistrationProcessing().process(it));
-        routes.put("GET /logout", it -> new LogoutProcessing().process(it));
+        routes.put("POST /cat/action", it -> new CatActionProcessing().process(it));
 
         routes.put("GET .css", it -> FileHandler.handle(it, CSS, CSS_DIR));
         routes.put("GET .jpeg", it -> FileHandler.handle(it, JPEG, IMAGES_DIR));

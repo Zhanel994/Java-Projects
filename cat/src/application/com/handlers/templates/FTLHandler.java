@@ -28,7 +28,7 @@ public abstract class FTLHandler
             Template template = configuration.getTemplate(templateName);
 
             Object model = process(exchange, errors);
-            byte[] data = write(template, model, exchange.getRemoteAddress().getHostString());
+            byte[] data = write(template, model);
 
             Sender.sendResponse(exchange, HTML, data);
         }
@@ -44,12 +44,12 @@ public abstract class FTLHandler
         }
     }
 
-    private byte[] write(Template template, Object data, String host) throws TemplateException, IOException
+    private byte[] write(Template template, Object model) throws TemplateException, IOException
     {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         OutputStreamWriter writer = new OutputStreamWriter(stream);
 
-        template.process(Map.of("data", data, "session", SessionService.getByHost(host)), writer);
+        template.process(Map.of("data", model), writer);
         writer.flush();
 
         return stream.toByteArray();
