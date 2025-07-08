@@ -55,11 +55,11 @@ public class Cat {
     }
 
     public int getSatiety() {
-        return Math.max(0, Math.min(satiety, 100));
+        return satiety;
     }
 
     public int getHappiness() {
-        return Math.max(0, Math.min(happiness, 100));
+        return happiness;
     }
 
     public String getState() {
@@ -67,6 +67,10 @@ public class Cat {
     }
 
     public String getAvatar() {
+        if (sleeping) {
+            return "/images/sleeping_cat.jpeg";
+        }
+
         if (happiness <= 20) {
             return "/images/sad_cat.jpeg";
         } else if (happiness >= 70) {

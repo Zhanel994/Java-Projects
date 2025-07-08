@@ -2,6 +2,7 @@ package application.com.processings;
 
 import application.com.handlers.common.RedirectHandler;
 import application.com.handlers.templates.impl.CatHandler;
+import application.com.handlers.templates.impl.WelcomeHandler;
 import application.com.services.CatService;
 import application.com.utils.FormBodyParser;
 import com.sun.net.httpserver.HttpExchange;
@@ -25,7 +26,7 @@ public class CatNameProcessing {
             RedirectHandler.handle(exchange, "/cat");
 
         } catch (Exception exception) {
-            new CatHandler().handle(exchange, WELCOME_TEMPLATE, exception.getMessage());
+            new WelcomeHandler().handle(exchange, WELCOME_TEMPLATE, exception.getMessage());
         }
     }
 }

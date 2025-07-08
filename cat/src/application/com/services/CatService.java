@@ -14,15 +14,20 @@ public class CatService {
     }
 
     public static void showAction(String action) {
-        if (cat == null) return;
+        if (cat == null) {
+            return;
+        }
 
         switch (action) {
             case "feed":
                 cat.feed();
+                break;
             case "play":
                 cat.play();
+                break;
             case "sleep":
                 cat.sleep();
+                break;
         }
     }
 }

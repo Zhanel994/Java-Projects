@@ -1,5 +1,5 @@
 body {
-    background: #e0f7fa;
+    background: beige;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -13,14 +13,13 @@ body {
     padding: 30px;
     border-radius: 10px;
     width: 400px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
 
 .stats p {
     margin: 5px 0;
     font-weight: bold;
-    color: #333;
+    color: black;
 }
 
 .cat-image img {
@@ -43,7 +42,7 @@ select {
 
 button {
     padding: 10px 20px;
-    background-color: #00acc1;
+    background-color: blue;
     color: white;
     border: none;
     border-radius: 6px;

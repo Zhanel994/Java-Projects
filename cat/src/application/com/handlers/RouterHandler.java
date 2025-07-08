@@ -3,6 +3,7 @@ package application.com.handlers;
 import application.com.handlers.common.ErrorHandler;
 import application.com.handlers.common.FileHandler;
 import application.com.handlers.templates.impl.CatHandler;
+import application.com.handlers.templates.impl.WelcomeHandler;
 import application.com.processings.CatActionProcessing;
 import application.com.processings.CatNameProcessing;
 import application.com.utils.URIResolver;
@@ -23,10 +24,10 @@ public class RouterHandler implements HttpHandler
 
     public RouterHandler()
     {
-        routes.put("GET /", it -> new CatHandler().handle(it, "templates/welcome.ftl"));
+        routes.put("GET /", it -> new WelcomeHandler().handle(it, WELCOME_TEMPLATE));
 
         routes.put("POST /cat", it -> new CatNameProcessing().process(it));
-        routes.put("GET /cat", it -> new CatHandler().handle(it, "templates/cat.ftl"));
+        routes.put("GET /cat", it -> new CatHandler().handle(it, CAT_TEMPLATE));
 
         routes.put("POST /cat/action", it -> new CatActionProcessing().process(it));
 
