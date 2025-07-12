@@ -1,0 +1,62 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: bisque;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 25px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+h3 {
+   text-align: center;
+}
+
+.task-list table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.task-list th, .task-list td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+
+.task-add input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.task-detail {
+    padding: 20px;
+}
+
+.task-left {
+    margin-bottom: 20px;
+}
+
+.task-actions form {
+    display: inline-block;
+    margin-right: 10px;
+}

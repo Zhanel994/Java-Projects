@@ -2,6 +2,9 @@ package application.com.handlers;
 
 import application.com.handlers.common.ErrorHandler;
 import application.com.handlers.common.FileHandler;
+import application.com.handlers.common.RedirectHandler;
+import application.com.handlers.templates.impl.*;
+import application.com.processing.CreateTaskProcessing;
 import application.com.utils.URIResolver;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -11,8 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static application.com.constants.ContentTypes.*;
-import static application.com.constants.FTLTemplates.CSS_DIR;
-import static application.com.constants.FTLTemplates.IMAGES_DIR;
+import static application.com.constants.FTLTemplates.*;
 import static application.com.constants.StatusCodes.NOT_FOUND;
 
 public class RouterHandler implements HttpHandler
@@ -21,7 +23,14 @@ public class RouterHandler implements HttpHandler
 
     public RouterHandler()
     {
+        routes.put("GET /", it -> RedirectHandler.handle(it,  "/tasks"));
 
+        routes.put("GET /tasks", it -> new TasksHandler().handle(it, TASKS_TEMPLATE));
+        routes.put("^GET /tasks/(\\d+)$", it -> new TaskDetailsHandler().handle(it, TASK_TEMPLATE));
+
+        routes.put("POST /tasks", new CreateTaskProcessing());
+        routes.put("POST /tasks/delete/(\\d+)$", new DeleteTaskHandler());
+        routes.put("POST /tasks/change_state/(\\d+)$", new CompleteTaskHandler());
 
         routes.put("GET .css", it -> FileHandler.handle(it, CSS, CSS_DIR));
         routes.put("GET .jpeg", it -> FileHandler.handle(it, JPEG, IMAGES_DIR));
