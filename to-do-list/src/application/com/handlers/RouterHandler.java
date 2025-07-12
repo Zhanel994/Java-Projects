@@ -21,9 +21,7 @@ public class RouterHandler implements HttpHandler
 
     public RouterHandler()
     {
-        routes.put("GET /", it -> new CandidatesHandler().handle(it, "candidates.ftl"));
-        routes.put("POST /vote", it -> new VoteHandler().handle(it));
-        routes.put("GET /thankyou", it -> new ThankYouHandler().handle(it, "thankyou.ftl"));
+
 
         routes.put("GET .css", it -> FileHandler.handle(it, CSS, CSS_DIR));
         routes.put("GET .jpeg", it -> FileHandler.handle(it, JPEG, IMAGES_DIR));

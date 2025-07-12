@@ -26,7 +26,7 @@ public class Task {
         this.title = title;
         this.executor = executor;
         this.description = description;
-        this.status = "new";
+        this.status = "NEW";
         this.creationDate = LocalDate.now();
         this.completionDate = null;
     }
