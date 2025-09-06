@@ -9,7 +9,29 @@
         <link rel="stylesheet" href="public/style.css">
     </head>
     <body>
+        <h2>Create new To Do</h2>
+        <div id="taskAddContainer">
+            <input type="text" id="newTaskAdd">
+            <button id="addTaskBtn">Add</button>
+            <button id="clearStorageBtn">Click here to clear the LocalStorage</button>
+        </div>
 
+        <div id="container">
+            <div class="column" id="toDoColumn">
+                <h2>To Do</h2>
+                <div id="toDoTask"></div>
+            </div>
+
+            <div class="column" id="inProgressColumn">
+                <h2>In Progress</h2>
+                <div id="inProgressTask"></div>
+            </div>
+
+            <div class="column" id="doneColumn">
+                <h2>Done</h2>
+                <div id="doneTask"></div>
+            </div>
+        </div>
         <script type="module" src="src/main.js"></script>
 
     </body>

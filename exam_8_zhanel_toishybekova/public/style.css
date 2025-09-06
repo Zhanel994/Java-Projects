@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: cadetblue;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+.column {
+    float: left;
+    width: 33%;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#taskAddContainer {
+    display:flex;
+    justify-content: center;
+    height: 20px;
+}
+
+input {
+    width: 250px;
+}
