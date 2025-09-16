@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Schema(description = "Request for updating a product")
-public record UpdateProductRecord(
+public record UpdateProductRequest(
         @NotNull
         @Schema(description = "Identifier of the product", example = "1")
         Long id,
