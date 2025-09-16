@@ -24,7 +24,7 @@ public record CreateProductRequest(
         Integer quantity,
 
         @NotBlank
-        @Schema(description = "Description of the product", example = "iPhone 16 has a sturdy, aerospace-grade aluminum enclosure and strong — and beautiful — color-infused glass on the back.")
+        @Schema(description = "Description of the product", example = "iPhone 16 Pro has a sturdy, aerospace-grade aluminum enclosure and strong — and beautiful — color-infused glass on the back.")
         String description,
 
         @NotNull

@@ -2,7 +2,7 @@ package application.month9onlineshop.com.converter;
 
 import application.month9onlineshop.com.entities.Product;
 import application.month9onlineshop.com.models.request.CreateProductRequest;
-import application.month9onlineshop.com.models.request.UpdateProductRecord;
+import application.month9onlineshop.com.models.request.UpdateProductRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +25,7 @@ public class ProductConverter {
         return product;
     }
 
-    public Product merge(UpdateProductRecord request, Product product) {
+    public Product merge(UpdateProductRequest request, Product product) {
         product.setName(request.name());
 
         product.setImageUrl(request.imageUrl());

@@ -5,7 +5,7 @@ CREATE TABLE products (
                           name VARCHAR(100) NOT NULL,
                           image_url VARCHAR(255),
                           quantity INT NOT NULL,
-                          description TEXT,
+                          description TEXT NOT NULL,
                           price NUMERIC NOT NULL,
                           category product_category NOT NULL
 );

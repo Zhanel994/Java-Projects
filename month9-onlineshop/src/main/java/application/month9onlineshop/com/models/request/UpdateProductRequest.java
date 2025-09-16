@@ -30,7 +30,7 @@ public record UpdateProductRequest(
         Integer quantity,
 
         @NotBlank
-        @Schema(description = "Description of the product", example = "Ultimate clarity. Experience the highest clarity and detail on a 15.6\" display with 3456x2160 resolution and touchscreen.")
+        @Schema(description = "Description of the product", example = "Ultimate clarity. Experience the highest clarity and detail on a 15.6 display with 3456x2160 resolution and touchscreen.")
         String description,
 
         @NotNull
