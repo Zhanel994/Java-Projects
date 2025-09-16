@@ -28,7 +28,7 @@ public record CreateProductRequest(
         String description,
 
         @NotNull
-        @Schema(description = "Price of the product", example = "434.900")
+        @Schema(description = "Price of the product", example = "434900.00")
         BigDecimal price,
 
         @NotNull

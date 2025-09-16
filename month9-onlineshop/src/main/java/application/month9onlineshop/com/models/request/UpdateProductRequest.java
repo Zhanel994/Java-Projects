@@ -34,7 +34,7 @@ public record UpdateProductRequest(
         String description,
 
         @NotNull
-        @Schema(description = "Price of the product", example = "1.799.990")
+        @Schema(description = "Price of the product", example = "1799990.00")
         BigDecimal price,
 
         @NotNull

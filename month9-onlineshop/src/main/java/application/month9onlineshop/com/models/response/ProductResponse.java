@@ -22,7 +22,7 @@ public record ProductResponse (
     @Schema(description = "Description of the product", example = "The Samsung Galaxy Tab A9 has an 8.7-inch display with a resolution of 1340 x 800 pixels. This means that the pixel density is low and I can actually see pixels when reading.")
     String description,
 
-    @Schema(description = "Price of the product", example = "119.890")
+    @Schema(description = "Price of the product", example = "119890.00")
     BigDecimal price,
 
     @Schema(description = "Category of the product", example = "TABLET")
