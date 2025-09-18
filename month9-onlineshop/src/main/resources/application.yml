@@ -37,3 +37,10 @@ springdoc:
   paths-to-match: /api/v1/**
   swagger-ui:
     disable-swagger-default-url: true
+
+application:
+  admin:
+    password: ${APP_ADMIN_PASSWORD}
+  jwt:
+    signature:
+      secret:  ${APP_SIGNATURE_SECRET}

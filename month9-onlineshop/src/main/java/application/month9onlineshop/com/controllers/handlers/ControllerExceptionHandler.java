@@ -12,35 +12,30 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.Map;
 
 @ControllerAdvice
-public class ControllerExceptionHandler
-{
+public class ControllerExceptionHandler {
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleUnhandledExceptions(Exception exception)
-    {
+    public ResponseEntity<?> handleUnhandledExceptions(Exception exception) {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(Map.of("error", exception.getMessage()));
     }
 
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<?> handleNotFoundExceptions(NotFoundException exception)
-    {
+    public ResponseEntity<?> handleNotFoundExceptions(NotFoundException exception) {
         return ResponseEntity
                             .status(HttpStatus.NOT_FOUND)
                             .body(Map.of("error", exception.getMessage()));
     }
 
     @ExceptionHandler(ValidationException.class)
-    public ResponseEntity<?> handleValidationExceptions(ValidationException exception)
-    {
+    public ResponseEntity<?> handleValidationExceptions(ValidationException exception) {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(Map.of("error", exception.getMessage()));
     }
 
     @ExceptionHandler(BindException.class)
-    private ResponseEntity<?> handleBindException(BindException exception)
-    {
+    private ResponseEntity<?> handleBindException(BindException exception) {
         var errors = exception
                 .getFieldErrors()
                 .stream()
