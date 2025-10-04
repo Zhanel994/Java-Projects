@@ -32,7 +32,7 @@ public interface UserControllerAPI {
                     ),
             }
     )
-    ResponseEntity<Void> registration(@RequestPart("request") @Valid RegistrationRequest request, @RequestPart(value = "avatar", required = false) MultipartFile avatar) throws IOException;
+    ResponseEntity<Void> registration(@RequestBody RegistrationRequest request);
 
     @PostMapping("/login")
     @Operation (

@@ -30,7 +30,7 @@ public class UserService implements UserDetailsService {
     private final TripSpecification specification;
     private final MediaService mediaService;
 
-    public UserResponse create(RegistrationRequest request, MultipartFile avatarFile) throws IOException {
+    public UserResponse create(RegistrationRequest request) {
         if (repository.existsByUsernameOrEmail(request.username(), request.email())) {
             throw new IllegalArgumentException("Username or email is already in use!");
         }
@@ -40,15 +40,7 @@ public class UserService implements UserDetailsService {
         user.setEmail(request.email());
         user.setPassword(encoder.encode(request.password()));
         user.setName(request.name());
-        user.setBio(request.bio());
-        user.setPhone(request.phone());
-        user.setGender(request.gender());
         user.setCreatedAt(LocalDateTime.now());
-
-        if (avatarFile != null && !avatarFile.isEmpty()) {
-            Media avatar = mediaService.create(avatarFile);
-            user.setAvatar(avatar);
-        }
 
         Authority authority = authorityService.findByAuthority("USER");
         user.addAuthority(authority);
@@ -64,49 +56,13 @@ public class UserService implements UserDetailsService {
     }
 
     private UserResponse toResponse(User user) {
-        String avatarUrl = (user.getAvatar() != null) ? user.getAvatar().getUrl() : null;
 
         return new UserResponse(
                 user.getId(),
                 user.getUsername(),
                 user.getEmail(),
-                avatarUrl,
                 user.getName(),
-                user.getBio(),
-                user.getPhone(),
-                user.getGender(),
-                user.getPosts() != null ? user.getPosts().size() : 0,
-                user.getSubscriptionCount(),
-                user.getSubscribersCount(),
                 user.getCreatedAt()
-        );
-    }
-
-    private UserSearchResponse toSearchResponse(User user) {
-        List<PostResponse> posts = new ArrayList<>();
-
-        if (user.getPosts() != null) {
-            for (Post post : user.getPosts()) {
-                posts.add(new PostResponse(
-                        post.getId(),
-                        post.getMedia().getUrl(),
-                        post.getCaption(),
-                        post.getLikes() != null ? post.getLikes().size() : 0,
-                        post.getComments() != null ? post.getComments().size() : 0,
-                        post.getCreatedAt(),
-                        user.getUsername()
-                ));
-            }
-        }
-
-        String avatarUrl = (user.getAvatar() != null) ? user.getAvatar().getUrl() : null;
-
-        return new UserSearchResponse(
-                user.getUsername(),
-                avatarUrl,
-                user.getName(),
-                user.getBio(),
-                posts
         );
     }
 
@@ -115,10 +71,4 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(() -> new IllegalArgumentException("User with id " + id + " not found!"));
     }
 
-    public List<UserSearchResponse> search(TripFilterParameters filter) {
-        return repository.findAll(specification.get(filter), filter.getPageRequest())
-                .stream()
-                .map(this::toSearchResponse)
-                .toList();
-    }
 }

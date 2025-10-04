@@ -21,8 +21,8 @@ public class UserController implements UserControllerAPI {
     private final AuthenticationService authenticationService;
 
     @Override
-    public ResponseEntity<Void> registration(RegistrationRequest request, MultipartFile avatar) throws IOException {
-        service.create(request, avatar);
+    public ResponseEntity<Void> registration(RegistrationRequest request) {
+        service.create(request);
         return ResponseEntity.accepted().build();
     }
 
