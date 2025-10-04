@@ -17,15 +17,15 @@ public record UserResponse(
 
         @NotBlank(message = "Username cannot be empty!")
         @Size(max = 25)
-        @Schema(description = "Username of the user", example = "Whisky")
+        @Schema(description = "Username of the user", example = "Carlos")
         String username,
 
         @NotBlank(message = "User email cannot be empty!")
         @Pattern(regexp = EMAIL_PATTERN, message = "Not valid email")
-        @Schema(description = "Email of the user", example = "username")
+        @Schema(description = "Email of the user", example = "Carlos12345@gmail.com")
         String email,
 
-        @Schema(description = "Name of the user", example = "Whisky")
+        @Schema(description = "Name of the user", example = "Carlos")
         String name,
 
         @Schema(description = "Creation date of the user", example = "2023-09-28T10:15:30")

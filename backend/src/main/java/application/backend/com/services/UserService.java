@@ -1,9 +1,7 @@
 package application.backend.com.services;
 
 import application.backend.com.entities.Authority;
-import application.backend.com.entities.Media;
 import application.backend.com.entities.User;
-import application.backend.com.filters.TripFilterParameters;
 import application.backend.com.models.request.RegistrationRequest;
 import application.backend.com.models.response.UserResponse;
 import application.backend.com.repositories.UserRepository;
@@ -14,12 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

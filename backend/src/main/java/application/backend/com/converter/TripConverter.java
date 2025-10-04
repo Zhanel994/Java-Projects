@@ -38,7 +38,7 @@ public class TripConverter {
         );
     }
 
-    public TripDetailsResponse toDetailResponse(Trip trip, Media media) {
+    public TripDetailsResponse toDetailResponse(Trip trip) {
         List<String> participantsName = trip.getParticipants() != null ? trip.getParticipants()
                                                                                             .stream()
                                                                                             .map(User::getUsername)
