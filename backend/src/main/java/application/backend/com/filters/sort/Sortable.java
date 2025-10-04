@@ -1,8 +1,5 @@
 package application.backend.com.filters.sort;
 
-public interface Sortable
-{
-
+public interface Sortable {
     String getColumn();
-
 }

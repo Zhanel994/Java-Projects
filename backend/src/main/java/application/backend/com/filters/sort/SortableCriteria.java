@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 
-public interface SortableCriteria
-{
+public interface SortableCriteria {
     void setSortBy(String value);
 
     Sortable getSortByOrDefault();

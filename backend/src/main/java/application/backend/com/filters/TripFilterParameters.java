@@ -14,19 +14,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(description = "Filter parameters for searching users")
-public class UserFilterParameters extends PageParameters {
+public class TripFilterParameters extends PageParameters {
 
-    @Schema(description = "Search by username", example = "Whisky")
-    private String username;
+    @Schema(description = "Search by title", example = "Germany")
+    private String title;
 
-    @Schema(description = "Search by email", example = "whisky@mail.com")
-    private String email;
+    @Schema(description = "Search by city", example = "Berlin")
+    private String city;
 
-    @Schema(description = "Search by name", example = "Whisky")
-    private String name;
-
-    @Schema(description = "Search by bio", example = "Hard-working cat!")
-    private String bio;
+    @Schema(description = "Search by description", example = "shopping")
+    private String description;
 
     @Override
     @JsonCreator

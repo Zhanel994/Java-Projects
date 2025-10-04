@@ -12,6 +12,9 @@ public record TripResponse(
         @Schema(description = "Identifier of the trip", example = "1")
         Long id,
 
+        @Schema(description = "Trip image URL", example = "https://cdn.kimkim.com/files/a/images/274624ae27e75faba073b0f2c95024057071c564/original-06e269fb78a7c04f0d4d019b41851cfb.jpg")
+        String mediaUrl,
+
         @NotBlank(message = "City cannot be empty!")
         @Schema(description = "City of the trip", example = "Berlin")
         String city,

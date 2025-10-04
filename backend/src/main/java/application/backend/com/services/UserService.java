@@ -3,11 +3,11 @@ package application.backend.com.services;
 import application.backend.com.entities.Authority;
 import application.backend.com.entities.Media;
 import application.backend.com.entities.User;
-import application.backend.com.filters.UserFilterParameters;
+import application.backend.com.filters.TripFilterParameters;
 import application.backend.com.models.request.RegistrationRequest;
 import application.backend.com.models.response.UserResponse;
 import application.backend.com.repositories.UserRepository;
-import application.backend.com.repositories.specification.UserSpecification;
+import application.backend.com.repositories.specification.TripSpecification;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -27,7 +27,7 @@ public class UserService implements UserDetailsService {
     private final PasswordEncoder encoder;
     private final AuthorityService authorityService;
     private final UserRepository repository;
-    private final UserSpecification specification;
+    private final TripSpecification specification;
     private final MediaService mediaService;
 
     public UserResponse create(RegistrationRequest request, MultipartFile avatarFile) throws IOException {
@@ -115,7 +115,7 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(() -> new IllegalArgumentException("User with id " + id + " not found!"));
     }
 
-    public List<UserSearchResponse> search(UserFilterParameters filter) {
+    public List<UserSearchResponse> search(TripFilterParameters filter) {
         return repository.findAll(specification.get(filter), filter.getPageRequest())
                 .stream()
                 .map(this::toSearchResponse)
