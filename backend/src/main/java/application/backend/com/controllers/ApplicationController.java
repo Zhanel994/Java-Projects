@@ -24,18 +24,22 @@ public class ApplicationController implements ApplicationControllerAPI {
     @Override
     public ResponseEntity<ApplicationResponse> apply(@RequestBody ApplicationRequest request, @AuthenticationPrincipal User user) {
         ApplicationResponse response = service.createApplication(request, user);
-        return ResponseEntity.status(201).body(response);
+        return ResponseEntity
+                            .status(201)
+                            .body(response);
     }
 
     @Override
     public ResponseEntity<List<ApplicationResponse>> getAllByUser( @AuthenticationPrincipal User user) {
         List<ApplicationResponse> applicationResponses = service.getApplicationsByUser(user);
-        return ResponseEntity.ok(applicationResponses);
+        return ResponseEntity
+                            .ok(applicationResponses);
     }
 
     @Override
     public ResponseEntity<ApplicationResponse> updateStatus(@PathVariable Long id, @RequestParam ApplicationStatus status, @AuthenticationPrincipal User creator) {
         ApplicationResponse applicationResponse = service.updateStatus(id, status, creator);
-        return ResponseEntity.ok(applicationResponse);
+        return ResponseEntity
+                            .ok(applicationResponse);
     };
 }

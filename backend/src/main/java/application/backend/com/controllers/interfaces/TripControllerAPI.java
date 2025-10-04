@@ -27,7 +27,7 @@ public interface TripControllerAPI {
             responses = {
                     @ApiResponse(
                             responseCode = "202",
-                            description = "User registration accepted",
+                            description = "Trip creation accepted",
                             useReturnTypeSchema = true
                     ),
             }
@@ -41,7 +41,7 @@ public interface TripControllerAPI {
             responses = {
                     @ApiResponse(
                             responseCode = "200",
-                            description = "Posts retrieved successfully",
+                            description = "Trips retrieved successfully",
                             useReturnTypeSchema = true
                     )
             }

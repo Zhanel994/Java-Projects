@@ -19,7 +19,9 @@ public class UserController implements UserControllerAPI {
     @Override
     public ResponseEntity<Void> registration(RegistrationRequest request) {
         service.create(request);
-        return ResponseEntity.accepted().build();
+        return ResponseEntity
+                            .accepted()
+                            .build();
     }
 
     @Override

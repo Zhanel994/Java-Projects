@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-public class MediaController implements MediaControllerAPI
-{
+public class MediaController implements MediaControllerAPI {
     private final MediaService service;
 
-    public ResponseEntity<byte[]> get(String name)
-    {
+    public ResponseEntity<byte[]> get(String name) {
         Media media = service.get(name);
         String type = media.getType().getContentType();
 

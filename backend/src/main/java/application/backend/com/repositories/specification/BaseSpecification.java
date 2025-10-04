@@ -5,8 +5,7 @@ import jakarta.validation.ValidationException;
 
 public abstract class BaseSpecification<T> {
     protected Predicate equal(Root<T> root, Predicate predicate, CriteriaBuilder builder, Object field, String name) {
-        if (field != null)
-        {
+        if (field != null) {
             predicate = builder.and(predicate, builder.equal(root.get(name), field));
         }
 

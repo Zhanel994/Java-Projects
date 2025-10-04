@@ -12,18 +12,20 @@ import org.springframework.stereotype.Component;
 public class ApplicationConverter {
     public Application toEntity(ApplicationRequest request, Trip trip, User user) {
         Application application = new Application();
+
         application.setTrip(trip);
         application.setUser(user);
         application.setStatus(ApplicationStatus.PENDING);
+
         return application;
     }
 
     public ApplicationResponse toResponse(Application application) {
         return new ApplicationResponse(
-          application.getTrip().getId(),
-          application.getTrip().getTitle(),
-          application.getUser().getUsername(),
-          application.getStatus()
+                application.getTrip().getId(),
+                application.getTrip().getTitle(),
+                application.getUser().getUsername(),
+                application.getStatus()
         );
     }
 }

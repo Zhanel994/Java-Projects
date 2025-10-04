@@ -58,10 +58,4 @@ public class UserService implements UserDetailsService {
                 user.getCreatedAt()
         );
     }
-
-    public User getById(Long id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("User with id " + id + " not found!"));
-    }
-
 }

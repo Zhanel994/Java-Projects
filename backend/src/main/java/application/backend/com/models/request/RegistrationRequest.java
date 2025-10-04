@@ -28,5 +28,4 @@ public record RegistrationRequest (
 
         @Schema(description = "Name of the user", example = "Carlos")
         String name
-
 ){}

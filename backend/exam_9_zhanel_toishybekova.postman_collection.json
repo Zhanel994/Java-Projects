@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "9de9c9d3-496a-483b-94fd-59ab165bcac5",
+		"name": "exam_9_zhanel_toishybekova",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47224443"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Carlos\",\r\n  \"password\": \"Carlos12345\",\r\n  \"email\": \"carlos12345@gmail.com\",\r\n  \"name\": \"Carlos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Carlos\",\r\n  \"password\": \"Carlos12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJDYXJsb3MiLCJhdXRob3JpdGllcyI6WyJhcHBsaWNhdGlvbi5iYWNrZW5kLmNvbS5lbnRpdGllcy5BdXRob3JpdHlAMjI3OGE4YzEiXSwidHlwZSI6IkFDQ0VTUyIsImV4cCI6MTc1OTU4NjE2MiwiaXNzIjoic2hvcCBhcHBsaWNhdGlvbiJ9.RKjpjACVeS7bDLFi_KihZMPvAg9VPz-A5Q_cD2EcI8c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "trip",
+							"value": "{\"title\":\"Trip to Germany\",\"city\":\"Berlin\",\"startDate\":\"2025-09-27T18:25:43.511\",\"endDate\":\"2025-10-07T18:25:43.511\",\"MaxParticipants\":\"10\",\"description\":\"In this trip, you are going to go sightseeing and go shopping in the capital of Germany!\"}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f0a11df-4293-4470-88e2-c94239303405"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/trips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJDYXJsb3MiLCJhdXRob3JpdGllcyI6WyJhcHBsaWNhdGlvbi5iYWNrZW5kLmNvbS5lbnRpdGllcy5BdXRob3JpdHlAMjI3OGE4YzEiXSwidHlwZSI6IkFDQ0VTUyIsImV4cCI6MTc1OTU4NjE2MiwiaXNzIjoic2hvcCBhcHBsaWNhdGlvbiJ9.RKjpjACVeS7bDLFi_KihZMPvAg9VPz-A5Q_cD2EcI8c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "trip",
+							"value": "{\"title\":\"Trip to Germany\",\"city\":\"Berlin\",\"startDate\":\"2025-09-27T18:25:43.511\",\"endDate\":\"2025-10-07T18:25:43.511\",\"MaxParticipants\":\"10\",\"description\":\"In this trip, you are going to go sightseeing and go shopping in the capital of Germany!\"}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f0a11df-4293-4470-88e2-c94239303405"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/trips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read one",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJDYXJsb3MiLCJhdXRob3JpdGllcyI6WyJhcHBsaWNhdGlvbi5iYWNrZW5kLmNvbS5lbnRpdGllcy5BdXRob3JpdHlAMjI3OGE4YzEiXSwidHlwZSI6IkFDQ0VTUyIsImV4cCI6MTc1OTU4NjE2MiwiaXNzIjoic2hvcCBhcHBsaWNhdGlvbiJ9.RKjpjACVeS7bDLFi_KihZMPvAg9VPz-A5Q_cD2EcI8c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "trip",
+							"value": "{\"title\":\"Trip to Germany\",\"city\":\"Berlin\",\"startDate\":\"2025-09-27T18:25:43.511\",\"endDate\":\"2025-10-07T18:25:43.511\",\"MaxParticipants\":\"10\",\"description\":\"In this trip, you are going to go sightseeing and go shopping in the capital of Germany!\"}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f0a11df-4293-4470-88e2-c94239303405"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/trips/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"trips",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "apply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBbGV4IiwiYXV0aG9yaXRpZXMiOlsiYXBwbGljYXRpb24uYmFja2VuZC5jb20uZW50aXRpZXMuQXV0aG9yaXR5QDQxNDVlMWMxIl0sInR5cGUiOiJBQ0NFU1MiLCJleHAiOjE3NTk1ODYzMzYsImlzcyI6InNob3AgYXBwbGljYXRpb24ifQ.hYGO_6CkgfoT0InjzBvGC-ToiE33M2vwwNCE9U-bqv8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tripId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update status",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "media",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/media/01cd099b-b0cb-4dea-92c4-2f7d1640adaa.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"media",
+						"01cd099b-b0cb-4dea-92c4-2f7d1640adaa.jpg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

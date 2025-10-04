@@ -26,5 +26,4 @@ public interface MediaControllerAPI {
             }
     )
     ResponseEntity<byte[]> get(@PathVariable String name) throws IOException;
-
 }

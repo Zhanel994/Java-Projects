@@ -15,6 +15,7 @@ public class TripConverter {
 
     public Trip toEntity(TripRequest request, Media media, User creator) {
         Trip trip = new Trip();
+
         trip.setTitle(request.title());
         trip.setCity(request.city());
         trip.setDescription(request.description());
@@ -29,12 +30,12 @@ public class TripConverter {
 
     public TripResponse toResponse(Trip trip, Media media) {
         return new TripResponse(
-                trip.getId(),
-                trip.getMedia().getUrl(),
-                trip.getCity(),
-                trip.getStartDate(),
-                trip.getEndDate(),
-                trip.getFreePlaces()
+                                trip.getId(),
+                                trip.getMedia().getUrl(),
+                                trip.getCity(),
+                                trip.getStartDate(),
+                                trip.getEndDate(),
+                                trip.getFreePlaces()
         );
     }
 
@@ -45,14 +46,14 @@ public class TripConverter {
                                                                                             .toList()
                                                                                             :List.of();
         return new TripDetailsResponse(
-                trip.getId(),
-                trip.getMedia().getUrl(),
-                trip.getDescription(),
-                trip.getStartDate(),
-                trip.getEndDate(),
-                trip.getMaxParticipants(),
-                trip.getFreePlaces(),
-                participantsName
+                                        trip.getId(),
+                                        trip.getMedia().getUrl(),
+                                        trip.getDescription(),
+                                        trip.getStartDate(),
+                                        trip.getEndDate(),
+                                        trip.getMaxParticipants(),
+                                        trip.getFreePlaces(),
+                                        participantsName
         );
     }
 }

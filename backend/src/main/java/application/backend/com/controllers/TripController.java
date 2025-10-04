@@ -30,25 +30,30 @@ public class TripController implements TripControllerAPI {
     @Override
     public ResponseEntity<TripResponse> createTrip(TripRequest request, MultipartFile file, @AuthenticationPrincipal User user) throws IOException {
         Trip trip = tripService.createTrip(request, file, user);
-        return ResponseEntity.status(201).body(tripService.getTripResponse(trip));
+        return ResponseEntity
+                            .status(201)
+                            .body(tripService.getTripResponse(trip));
     }
 
     @Override
     public ResponseEntity<List<TripResponse>> getAll() {
         List<TripResponse> trips = tripService.getAll();
-        return ResponseEntity.ok(trips);
+        return ResponseEntity
+                            .ok(trips);
     };
 
     @Override
     public ResponseEntity<TripDetailsResponse> getById(@PathVariable Long id){
         TripDetailsResponse tripDetailsResponse = tripService.getById(id);
-        return ResponseEntity.ok(tripDetailsResponse);
+        return ResponseEntity
+                            .ok(tripDetailsResponse);
     }
 
     @Override
     public ResponseEntity<List<TripSearchResponse>> search(@RequestBody TripFilterParameters filter) {
         List<TripSearchResponse> trips = tripService.searchTrips(filter).toList();
-        return ResponseEntity.ok(trips);
+        return ResponseEntity
+                            .ok(trips);
     }
 
 

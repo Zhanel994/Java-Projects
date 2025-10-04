@@ -22,7 +22,9 @@ public class ApplicationService {
     private final ApplicationConverter converter;
 
     public ApplicationResponse createApplication(ApplicationRequest request, User user) {
-        Trip trip = tripRepository.findById(request.tripId()).orElseThrow(() -> new IllegalArgumentException("Trip with id: " + request.tripId() + " not found!"));
+        Trip trip = tripRepository
+                                    .findById(request.tripId())
+                                    .orElseThrow(() -> new IllegalArgumentException("Trip with id: " + request.tripId() + " not found!"));
 
         Application application = new Application();
         application.setTrip(trip);
@@ -30,6 +32,7 @@ public class ApplicationService {
         application.setStatus(ApplicationStatus.PENDING);
 
         Application saved = applicationRepository.save(application);
+
         return converter.toResponse(saved);
     }
 
@@ -39,14 +42,6 @@ public class ApplicationService {
                             .stream()
                             .map(converter::toResponse)
                             .toList();
-    }
-
-    public List<ApplicationResponse> getApplicationByTrip(Trip trip) {
-        List<Application> applications = applicationRepository.findByTrip(trip);
-        return applications
-                .stream()
-                .map(converter::toResponse)
-                .toList();
     }
 
     public ApplicationResponse updateStatus(Long id, ApplicationStatus status, User creator) {
