@@ -1,0 +1,5 @@
+This is a video poker game programme. 
+The player is dealt 5 cards from a deck of 52 cards. 
+The player can choose any of these cards and replace them with new ones, 
+but only once (for example, they can replace only two of their cards, or all five, or none). 
+The resulting cards are used to calculate the winnings. 

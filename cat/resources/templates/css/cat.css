@@ -1,0 +1,55 @@
+body {
+    background: beige;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 0;
+    margin: 0;
+}
+
+.cat-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.stats p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: black;
+}
+
+.cat-image img {
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+select {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #008b9a;
+}
