@@ -1,0 +1,2 @@
+A small project has been written based on an HTTP server that simulates feeding and playing with a cat. 
+The cat's state changes depending on whether it is asleep, full or hungry, etc., with a level for each state.

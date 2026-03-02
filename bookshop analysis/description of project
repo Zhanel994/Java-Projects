@@ -1,0 +1,5 @@
+Legend
+The company had accumulated an internal library of books. 
+Until now, employees had been borrowing books informally, and it was difficult to track their movements.
+It was now decided to develop a web application with a backend REST API through which books could be registered, 
+their issuance and return tracked, and users accounted for.
