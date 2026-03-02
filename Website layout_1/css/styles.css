@@ -1,0 +1,109 @@
+* {
+    color: #4f4d6a !important;
+}
+
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.navbar .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+main {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main h2 {
+    font-size: 24px;
+}
+
+main h1 {
+    font-size: 125px;
+}
+
+main p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+main hr {
+    border-width: 1px;
+}
+
+
+.btn-custom {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #fff !important;
+    padding: 10px 40px;
+    border-radius: 25px;
+}
+
+.btn-see {
+    background: linear-gradient(to right, #6d6b89, #504e6b);
+    border: 1px solid #4f4d6a;
+}
+
+.btn-meet {
+    background: linear-gradient(to right, #cdbec7, #9e8596);
+    border: 1px solid #937d91;
+}
+
+.bg-own {
+    background-color: #ebebeb;
+}
+
+.check-out {
+    font-size: 24px;
+}
+
+.our-worx {
+    font-size: 72px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.circle-img {
+    border: 20px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature h4{
+    font-size: 22px;
+
+}
+
+.feature p {
+    font-size: 12px;
+    line-height: 23px;
+}
+
+.btn-view {
+    border-radius: 8px;
+    background-color: #4f4d6a;
+    color: #fff !important;
+    padding: 2px 20px;
+}
+
+.bg-footer {
+    background-color: #505050;
+}
+
+
+footer h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #fff !important;
+}
+
+footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    color: #fff !important;
+}

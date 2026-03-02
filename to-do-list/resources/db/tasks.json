@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Контрольная работа",
+    "executor": "Брэд Питт",
+    "description": "Устный экзамен по актерскому мастерству",
+    "status": "NEW",
+    "creationDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 12
+    }
+  },
+  {
+    "id": 2,
+    "title": "Здоровье",
+    "executor": "Макс Ферстаппен",
+    "description": "Легкий бег",
+    "status": "DONE",
+    "creationDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 12
+    },
+    "completionDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 12
+    }
+  }
+]
