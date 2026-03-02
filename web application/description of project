@@ -1,0 +1,2 @@
+This is a full-stack web application that displays posts and comments on them. 
+I used SpringBoot with MongoDB for the backend and pure JS for the frontend.
